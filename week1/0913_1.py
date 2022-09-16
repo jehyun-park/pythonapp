@@ -6,6 +6,3 @@ print(floor(3.14)) #내림
 print(ceil(3.14)) #올림
 print(sqrt(16)) #16의 제곱근 
 
-
-
-

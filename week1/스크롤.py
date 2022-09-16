@@ -1,4 +1,3 @@
-
 from tkinter import *
 from turtle import left
 window = Tk()

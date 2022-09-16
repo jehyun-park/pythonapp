@@ -15,6 +15,3 @@ balance = 0 #최초금액
 balance = deposit(balance, 1000) 
 balance = m_minus(balance,500)
 print(balance)   
-
-
-    
