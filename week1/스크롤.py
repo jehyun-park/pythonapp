@@ -16,7 +16,10 @@ for i in range(1,32) :
     listbox.insert(END,str(i) + "일")
 listbox.pack(side="left")
 
+
 scrollbar.config(command=listbox.yview)
+
+
 
 listbox.pack()
 
