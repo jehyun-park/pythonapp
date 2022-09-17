@@ -16,7 +16,7 @@ for i in range(1,32) :
     listbox.insert(END,str(i) + "일")
 listbox.pack(side="left")
 
-scrollbar["command"]=listbox.yview
+scrollbar.config(command=list.yview)
 
 listbox.pack()
 
