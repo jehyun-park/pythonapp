@@ -6,8 +6,18 @@ window = Tk()
 window.title("제목없음")
 window.geometry("640x480")
 
+filename = "week1/test.txt"
+
 def new_file():
     print("새 파일을 생성합니다.")
+
+def open_file():
+    with open(filename,"r", encoding="utf8") as test :
+        txt.delete("1.0",END)
+        txt.insert(END,test.read())
+def save_file():
+    with open(filename, "w", encoding="utf8") as test :
+        test.write(txt.get("1.0",END))   # ->> test.txt로 저장
 
 menu = Menu(window)
 
@@ -15,7 +25,8 @@ menu = Menu(window)
 menu_file = Menu(menu, tearoff=0)
 menu_file.add_command(label="새로 만들기 (N)", command=new_file)
 menu_file.add_command(label="새 창 (W)")
-menu_file.add_command(label="저장 (S)")
+menu_file.add_command(label="열기 (O)", command=open_file)
+menu_file.add_command(label="저장 (S)", command=save_file)
 menu_file.add_command(label="다름 이름으로 저장(A)...")
 menu_file.add_separator()
 menu_file.add_command(label="페이지 설정 (U)...")
@@ -55,6 +66,14 @@ menu.add_cascade(label="서식(O)", menu=menu_doc)
 menu.add_cascade(label="보기(V)",menu=menu_view)
 menu.add_cascade(label="도움말(H)")
 
+scrollbar = Scrollbar(window)
+scrollbar.pack(side="right", fill="y")
+
+
+txt = Text(window,yscrollcommand=scrollbar.set)
+txt.pack(fill="both",expand=True,side="left")
+
+scrollbar.config(command=txt.yview)
 
 window.config(menu=menu)
 

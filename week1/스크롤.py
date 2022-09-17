@@ -11,12 +11,12 @@ scrollbar = Scrollbar(frame)
 scrollbar.pack(side="right", fill="y")
 
 
-listbox = Listbox(frame, selectmode="extended", height=10, yscrollcommand=scrollbar.set)
+listbox = Listbox(frame, selectmode="extenden", height=10, yscrollcommand=scrollbar.set)
 for i in range(1,32) :
     listbox.insert(END,str(i) + "일")
 listbox.pack(side="left")
 
-scrollbar["command"]=listbox.yview
+scrollbar.config(command=listbox.yview)
 
 listbox.pack()
 

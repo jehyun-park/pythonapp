@@ -60,7 +60,7 @@ btn_list.pack()
 label1 = Label(window,text="안녕하세요")
 label1.pack()
 
-photo1 = PhotoImage(file="ha.png")
+photo1 = PhotoImage(file="week1/ha.png")
 label2 = Label(window,image=photo1)
 label2.pack()
 
@@ -80,7 +80,7 @@ btn4.pack()
 btn6 = Button(window,text="종료",command=quit)
 btn6.pack()
 
-photo = PhotoImage(file="ha.png")
+photo = PhotoImage(file="week1/ha.png")
 btn5 = Button(window,image=photo)
 btn5.pack()
 
