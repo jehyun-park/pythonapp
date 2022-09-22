@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-codes = ['035720','035420','005930','000660','066570']
+codes = ['035720','035420','005930','000660','066570','005380']
 
 for code in codes:
     url = f"https://finance.naver.com/item/sise.naver?code={code}"
