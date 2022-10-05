@@ -1,4 +1,15 @@
-h1 {
-  color: blue;
-  font-size: 50px;
+#header {
+  height: 250px;
+  background-color: #686868;
+}
+
+#dcu {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+#footer {
+  height: 100px;
+  background-color: #343a40;
 }

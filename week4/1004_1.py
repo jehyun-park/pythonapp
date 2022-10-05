@@ -13,17 +13,17 @@ curs = conn.cursor(pymysql.cursors.DictCursor) #딕셔너리 형태로 결과를
 
             ########### 테이블 생성 #######
 
-#sql = '''create table board (
-#    idx int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-#    title varchar(255),
-#    name varchar(255),
-#    email varchar(255),
-#    memo text,
-#    wdate varchar(255),
-#    hit int(11),
-#    pw varchar(255)
-#    )
-#    '''
+sql = '''create table boards (
+    idx int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    title varchar(255),
+    name varchar(255),
+    email varchar(255),
+    memo text,
+    wdate varchar(255),
+    hit int(11),
+    pw varchar(255)
+    )
+    '''
 #sql = "show tables"
 
 
@@ -42,13 +42,16 @@ curs = conn.cursor(pymysql.cursors.DictCursor) #딕셔너리 형태로 결과를
              #########글을 불러내기 ############3
 
 #sql = "select * from user order by name"
-#curs.execute(sql)
+curs.execute(sql)
 #rows = curs.fetchall() # 모든 데이터를 한번에 가져올때 사용
 #rows = curs.fetchone() #하나의 행만 가져올떄 사용
 #rows = curs.fetchmany(3) #원하는 행의 수를 가져올때 사용
 
 #conn.commit()  #한번 더 확인 질문 
 #print(rows)
+
+#df = DataFrame(rows)
+#df = df.to_excel("1004.xlsx")
 
            ############# 글 수정 ###########
 

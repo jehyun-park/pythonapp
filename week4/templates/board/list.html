@@ -90,60 +90,39 @@
       </div>
     </nav>
 
-    <div id="dcu">
-      <div class="row row-cols-1 row-cols-md-2">
-        <div class="col mb-4">
-          <div class="card">
-            <img src="..." class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col mb-4">
-          <div class="card">
-            <img src="..." class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col mb-4">
-          <div class="card">
-            <img src="..." class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col mb-4">
-          <div class="card">
-            <img src="..." class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div id="dcu" style="margin-bottom: 100px">
+      <h3>게시판 목록</h3>
+      <table style="width: 100%; background-color: beige">
+        <tr style="height: 45px">
+          <th style="color: black; width: 10%; text-align: center">번호</th>
+          <th style="color: black; width: 50%; text-align: center">제목</th>
+          <th style="color: black; width: 15%; text-align: center">이름</th>
+          <th style="color: black; width: 15%; text-align: center">날짜</th>
+          <th style="color: black; width: 10%; text-align: center">조회</th>
+        </tr>
+        {% if rows%}
+        <tr>
+          <th>1</th>
+          <th>1</th>
+          <th>1</th>
+          <th>1</th>
+          <th>1</th>
+        </tr>
+        {% else %}
+        <tr>
+          <td colspan="5" style="background-color: black; text-align: center">
+            등록된 글이 없습니다.
+          </td>
+        </tr>
+        {% endif%}
+        <tr>
+          <td colspan="5" style="text-align: right">
+            <a class="btn btn-warning" href="/board/write" role="button"
+              >글쓰기</a
+            >
+          </td>
+        </tr>
+      </table>
     </div>
 
     <!-- footer 영역-->
