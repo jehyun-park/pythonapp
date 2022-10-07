@@ -90,72 +90,39 @@
       </div>
     </nav>
 
-    <div id="dcu" style="margin-bottom: 30px">
-      <h3>게시판 글쓰기</h3>
-      <form method="post" action="/board/add">
-        <div class="form-group">
-          <label for="exampleInputEmail1">제목</label>
-          <input
-            type="text"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            name="title"
-            placeholder="제목을 입력하세요"
-            required
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="exampleInputEmail2">이름</label>
-          <input
-            type="text"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            name="name"
-            placeholder="이름을 입력하세요"
-            required
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="exampleInputEmail3">이메일</label>
-          <input
-            type="email"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            name="email"
-            placeholder="이메일을 입력하세요"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1">글내용</label>
-          <textarea
-            class="form-control"
-            id="exampleFormControlTextarea1"
-            rows="3"
-            name="memo"
-            required
-          ></textarea>
-        </div>
-
-        <div class="form-group">
-          <label for="exampleInputPassword1">비밀번호</label>
-          <input
-            type="password"
-            class="form-control"
-            id="exampleInputPassword1"
-            name="pass"
-            placeholder="비밀번호를 입력하세요"
-            required
-          />
-        </div>
-
-        <button type="submit" class="btn btn-secondary">글등록</button>
-      </form>
+    <div id="dcu" style="margin-bottom: 100px">
+      <h3>검색결과</h3>
+      <table style="width: 100%">
+        <tr style="height: 45px; background-color: beige">
+          <th style="color: black; width: 10%; text-align: center">번호</th>
+          <th style="color: black; width: 50%; text-align: center">제목</th>
+          <th style="color: black; width: 15%; text-align: center">이름</th>
+          <th style="color: black; width: 15%; text-align: center">날짜</th>
+          <th style="color: black; width: 10%; text-align: center">조회</th>
+        </tr>
+        {% if rows%} {% for i in rows %}
+        <tr>
+          <td style="text-align: center; height: 40px">{{ i.idx}}</td>
+          <td><a href="/board/content/{{i.idx}}">{{ i.title}}</a></td>
+          <td style="text-align: center">{{ i.name }}</td>
+          <td style="text-align: center">{{ i.wdate[0:10] }}</td>
+          <td style="text-align: center">{{ i.hit }}</td>
+        </tr>
+        {% endfor %} {% else %}
+        <tr>
+          <td colspan="5" style="background-color: beige; text-align: center">
+            등록된 글이 없습니다.
+          </td>
+        </tr>
+        {% endif%}
+        <tr>
+          <td colspan="5" style="text-align: right">
+            <a class="btn btn-warning" href="/board/write" role="button"
+              >글쓰기</a
+            >
+          </td>
+        </tr>
+      </table>
     </div>
 
     <!-- footer 영역-->

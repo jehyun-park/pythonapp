@@ -91,71 +91,78 @@
     </nav>
 
     <div id="dcu" style="margin-bottom: 30px">
-      <h3>게시판 글쓰기</h3>
-      <form method="post" action="/board/add">
-        <div class="form-group">
-          <label for="exampleInputEmail1">제목</label>
-          <input
-            type="text"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            name="title"
-            placeholder="제목을 입력하세요"
-            required
-          />
-        </div>
+      <h3>게시판 글보기</h3>
 
-        <div class="form-group">
-          <label for="exampleInputEmail2">이름</label>
-          <input
-            type="text"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            name="name"
-            placeholder="이름을 입력하세요"
-            required
-          />
-        </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">제목&nbsp;({{ rows[6]}})</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="제목을 입력하세요"
+          required
+          value="{{ rows [1] }}"
+          disabled
+        />
+      </div>
 
-        <div class="form-group">
-          <label for="exampleInputEmail3">이메일</label>
-          <input
-            type="email"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            name="email"
-            placeholder="이메일을 입력하세요"
-          />
-        </div>
+      <div class="form-group">
+        <label for="exampleInputEmail2">이름</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          value="{{ rows[2] }}"
+          disabled
+        />
+      </div>
 
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1">글내용</label>
-          <textarea
-            class="form-control"
-            id="exampleFormControlTextarea1"
-            rows="3"
-            name="memo"
-            required
-          ></textarea>
-        </div>
+      <div class="form-group">
+        <label for="exampleInputEmail3">이메일</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          value="{{ rows [3]}}"
+          disabled
+        />
+      </div>
 
-        <div class="form-group">
-          <label for="exampleInputPassword1">비밀번호</label>
-          <input
-            type="password"
-            class="form-control"
-            id="exampleInputPassword1"
-            name="pass"
-            placeholder="비밀번호를 입력하세요"
-            required
-          />
-        </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">글내용</label>
+        <textarea
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          rows="3"
+          disabled
+        >
+{{rows [4]}}</textarea
+        >
+      </div>
 
-        <button type="submit" class="btn btn-secondary">글등록</button>
-      </form>
+      <div class="form-group">
+        <label for="exampleInputPassword1">등록일</label>
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+          value="{{rows [5]}}"
+        />
+      </div>
+
+      <a
+        class="btn btn-secondary"
+        role="button"
+        href="/board/edit/{{ rows [0] }}"
+        >글수정</a
+      >
+      <a class="btn btn-danger" role="button" href="/board/del/{{ rows [0] }}"
+        >글삭제</a
+      >
+      <a class="btn btn-primary" role="button" href="/board/write">글등록</a>
     </div>
 
     <!-- footer 영역-->

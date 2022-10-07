@@ -92,25 +92,25 @@
 
     <div id="dcu" style="margin-bottom: 100px">
       <h3>게시판 목록</h3>
-      <table style="width: 100%; background-color: beige">
-        <tr style="height: 45px">
+      <table style="width: 100%">
+        <tr style="height: 45px; background-color: beige">
           <th style="color: black; width: 10%; text-align: center">번호</th>
           <th style="color: black; width: 50%; text-align: center">제목</th>
           <th style="color: black; width: 15%; text-align: center">이름</th>
           <th style="color: black; width: 15%; text-align: center">날짜</th>
           <th style="color: black; width: 10%; text-align: center">조회</th>
         </tr>
-        {% if rows%}
+        {% if rows%} {% for i in rows %}
         <tr>
-          <th>1</th>
-          <th>1</th>
-          <th>1</th>
-          <th>1</th>
-          <th>1</th>
+          <td style="text-align: center; height: 40px">{{ i[0]}}</td>
+          <td><a href="/board/content/{{i[0]}}">{{ i[1]}}</a></td>
+          <td style="text-align: center">{{ i[2] }}</td>
+          <td style="text-align: center">{{ i[5] }}</td>
+          <td style="text-align: center">{{ i[6] }}</td>
         </tr>
-        {% else %}
+        {% endfor %} {% else %}
         <tr>
-          <td colspan="5" style="background-color: black; text-align: center">
+          <td colspan="5" style="background-color: beige; text-align: center">
             등록된 글이 없습니다.
           </td>
         </tr>
